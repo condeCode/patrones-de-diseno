@@ -1,6 +1,6 @@
 package TrabajoUnoPuntoDos;
 
-public class DBSqlConnection extends DBConnection {
+public class DBSqlConnection implements DBConnection {
 
 	@Override
 	public void connect(String host, String user, String password, String database) {
