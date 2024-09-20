@@ -2,7 +2,7 @@ package builder;
 
 import model.HotWheels;
 
-public class HotWheelsBuilder implements Builder {
+public class HotWheelsBuilder implements IHotWheelBuilder {
   private int id;
   private String seriesName;
   private String model;
