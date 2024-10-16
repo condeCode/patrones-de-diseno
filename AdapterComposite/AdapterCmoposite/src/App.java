@@ -20,8 +20,10 @@ public class App {
 
       organization1.showInfo();
 
-      headquarter.addEmployee(new Employee("Emp1"));
-      headquarter.addEmployee(new Employee("Emp2"));
+      headquarter.addEmployee(new Employee("jorge"));
+      headquarter.addEmployee(new Employee("jorge"));
+
+      dependency1.addEmployee(new Employee("mario"));
 
       organization1.showEmployees();
     } else {

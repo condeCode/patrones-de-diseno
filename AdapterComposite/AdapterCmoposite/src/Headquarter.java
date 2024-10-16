@@ -20,15 +20,40 @@ public class Headquarter extends OrganizationUnit {
     organizations.remove(organization);
   }
 
+  public boolean employeeExists(Employee employee) {
+    for (Employee emp : employees) {
+      if (emp.getName().equals(employee.getName())) {
+        return true;
+      }
+    }
+
+    for (OrganizationUnit organization : organizations) {
+      if (organization instanceof Headquarter) {
+        Headquarter headquarter = (Headquarter) organization;
+        if (headquarter.employeeExists(employee)) {
+          return true;
+        }
+      } else if (organization instanceof Dependency) {
+        Dependency dependency = (Dependency) organization;
+        if (dependency.employeeExists(employee)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
   @Override
-  public void addEmployee(Employee employee){
-    employees.add(employee);
+  public void addEmployee(Employee employee) {
+    if (!employeeExists(employee)) {
+      employees.add(employee);
+    } else {
+      System.out.println("Error: Employee " + employee.getName() + " already exists in a headquarters or dependency.");
+    }
   }
 
   @Override
   public void searchUser(String userName) {
-    //employees.stream().filter(user -> Objects.equals(user.getUserName(), userName)).peek(System.out::println);
-
 
     for (OrganizationUnit organization : organizations) {
       organization.searchUser(userName);

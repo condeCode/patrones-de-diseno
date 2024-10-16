@@ -5,6 +5,10 @@ public class Employee implements IOrganization {
     this.name = name;
   }
 
+  public String getName() {
+    return name;
+  }
+
   @Override
   public void showInfo() {
     System.out.println("Employee: " + name);

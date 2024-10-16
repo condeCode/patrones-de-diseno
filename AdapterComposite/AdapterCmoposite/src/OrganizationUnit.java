@@ -1,5 +1,4 @@
-public abstract class OrganizationUnit implements IOrganization{
-
+public abstract class OrganizationUnit implements IOrganization {
 
     public void add(OrganizationUnit organization) {
 
@@ -9,7 +8,11 @@ public abstract class OrganizationUnit implements IOrganization{
 
     }
 
-    public void addEmployee(Employee employee){
+    public boolean employeeExists(Employee employee) {
+        return false;
+    }
+
+    public void addEmployee(Employee employee) {
     }
 
     public void searchUser(String userName) {
